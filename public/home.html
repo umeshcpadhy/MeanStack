@@ -2,7 +2,7 @@
 <div class="col-md-4">
 <h4>Login:</h4>
 <br><br>
-<input type="Text" size="30" placeholder="UserName" ng-model="username >
+<input type="Text" size="30" placeholder="UserName" ng-model="username" >
 <br><br>
 <input type="password" size="30" placeholder="Password" ng-model="password">
 <br><br>
@@ -12,23 +12,13 @@
 </div>
 <div class="col-md-8">
 <div class="new-meow">
-<input type="text" class="form-control" placeholder="new meow">
-<button type="button" class="btn">Submit</button>
+<input type="text" class="form-control" ng-model="newMeow" placeholder="new meow">
+<button type="button" ng-click="submitNewMeow()" class="btn">Submit</button>
 </div>
-<h3>
+<h3 ng-repeat="meow in meows">
 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-Hello I flipped over a cup
-<a><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </a>
-</h3>
-<h3>
-<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-My Owner just said Hi to me.Yum
-<a><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </a>
-</h3>
-<h3>
-<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-I ran around the house today and made a mess
-<a><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> </a>
+{{meow.text}}
+<a><span class="glyphicon glyphicon-remove" ng-click="removeMeow(meow)" aria-hidden="true"></span> </a>
 </h3>
 </div>
 </div>
