@@ -1,5 +1,6 @@
-<div class="row feed">
+<div ng-hid><div class="row feed">
 <div class="col-md-4">
+<div ng-hide="currentUser">
 <h4>Login:</h4>
 <br><br>
 <input type="Text" size="30" placeholder="UserName" ng-model="username" >
@@ -9,6 +10,12 @@
 <button type="button"  ng-click="signin()">Sign In</button>
 <br><br>
 <a href="#!/signup">Not a member? Signup</a>
+</div>
+</div>
+<div ng-show="currentUser">
+    Hello, {{currentUser}}
+    <br><br>
+<a href ng-click="logout()">Logout </a>
 </div>
 <div class="col-md-8">
 <div class="new-meow">
